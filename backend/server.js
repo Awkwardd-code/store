@@ -24,7 +24,7 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
 app.use(cors({
-    origin: "http://localhost:5173",  // Allow requests from Vite frontend
+    origin: process.env.CURRENT_URL,  // Allow requests from Vite frontend
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],  // Allow PATCH
     credentials: true,  // Allow cookies if needed
 }));
@@ -34,6 +34,9 @@ app.use(cors({
 const PORT = process.env.PORT || 5000;
 
 // const __dirname = path.resolve();
+app.get("/",(req,res)=>{
+    res.send("Hello, Welcome to the Backend !!!")
+})
 
 
 
