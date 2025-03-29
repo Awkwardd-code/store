@@ -57,9 +57,10 @@ app.use("/api/analytics", analyticsRoutes);
     });
 }
  */
-
-app.listen(PORT, () => {
+connectDB();
+export default app;
+/* app.listen(PORT, () => {
     console.log(`Server is Running on http://localhost:${PORT}`);
     connectDB()
 
-})
+}) */
